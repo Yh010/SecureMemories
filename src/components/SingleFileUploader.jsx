@@ -10,7 +10,25 @@ const SingleFileUploader = () => {
   };
 
   const handleUpload = async () => {
-    
+      if (file) {
+        console.log("Uploading file...");
+        const formData = new FormData();
+        formData.append("file", file);
+          
+
+          try {
+            //change the url for file upload to the 3rd party service
+            const result = await fetch("https://httpbin.org/post", {
+                method: "POST",
+                body: formData,
+            });
+            
+            const data = await result.json();
+            console.log(data);
+        } catch {
+            console.error("Error uploading file!");
+        }
+    }
   };
 
   return (
