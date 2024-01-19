@@ -2,6 +2,7 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg"; */
 import "./App.css";
+import MultipleFileUploader from "./components/MultipleFileUploader";
 import SingleFileUploader from "./components/SingleFileUploader";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <SingleFileUploader />
+      <MultipleFileUploader />
     </>
   );
 }

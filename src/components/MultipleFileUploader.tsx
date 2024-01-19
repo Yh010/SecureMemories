@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const SingleFileUploader = () => {
-  const [file, setFile] = useState<File | null>(null);
+const MultipleFileUploader = () => {
+  const [files, setFiles] = useState<FileList | null>(null);
   const [status, setStatus] = useState<
     "initial" | "uploading" | "success" | "fail"
   >("initial");
@@ -9,17 +9,20 @@ const SingleFileUploader = () => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setStatus("initial");
-      setFile(e.target.files[0]);
+      setFiles(e.target.files);
     }
   };
 
   const handleUpload = async () => {
-    if (file) {
+    if (files) {
       setStatus("uploading");
 
       const formData = new FormData();
-      formData.append("file", file);
-      //change th url to the 3rd party media storage service
+
+      [...files].forEach((file) => {
+        formData.append("files", file);
+      });
+
       try {
         const result = await fetch("https://httpbin.org/post", {
           method: "POST",
@@ -41,24 +44,25 @@ const SingleFileUploader = () => {
     <>
       <div className="input-group">
         <label htmlFor="file" className="sr-only">
-          Choose a file
+          Choose files
         </label>
-        <input id="file" type="file" onChange={handleFileChange} />
+        <input id="file" type="file" multiple onChange={handleFileChange} />
       </div>
-      {file && (
-        <section>
-          File details:
-          <ul>
-            <li>Name: {file.name}</li>
-            <li>Type: {file.type}</li>
-            <li>Size: {file.size} bytes</li>
-          </ul>
-        </section>
-      )}
+      {files &&
+        [...files].map((file, index) => (
+          <section key={file.name}>
+            File number {index + 1} details:
+            <ul>
+              <li>Name: {file.name}</li>
+              <li>Type: {file.type}</li>
+              <li>Size: {file.size} bytes</li>
+            </ul>
+          </section>
+        ))}
 
-      {file && (
+      {files && (
         <button onClick={handleUpload} className="submit">
-          Upload a file
+          Upload {files.length > 1 ? "files" : "a file"}
         </button>
       )}
 
@@ -69,14 +73,14 @@ const SingleFileUploader = () => {
 
 const Result = ({ status }: { status: string }) => {
   if (status === "success") {
-    return <p>✅ File uploaded successfully!</p>;
+    return <p>✅ Uploaded successfully!</p>;
   } else if (status === "fail") {
-    return <p>❌ File upload failed!</p>;
+    return <p>❌ Upload failed!</p>;
   } else if (status === "uploading") {
-    return <p>⏳ Uploading selected file...</p>;
+    return <p>⏳ Uploading started...</p>;
   } else {
     return null;
   }
 };
 
-export default SingleFileUploader;
+export default MultipleFileUploader;
