@@ -44,7 +44,7 @@ const MultipleFileUploader = () => {
     <>
       <div className="input-group">
         <label htmlFor="file" className="sr-only">
-          Choose files
+          Choose your images to upload
         </label>
         <input id="file" type="file" multiple onChange={handleFileChange} />
       </div>
