@@ -2,7 +2,10 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg"; */
 import "./App.css";
-import MultipleFileUploader from "./components/MultipleFileUploader";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import UploadData from "./pages/UploadData";
 /* import Navbar from "./components/Navbar"; */
 /* import imagePath from "./assets/react.svg"; */
 /* import SingleFileUploader from "./components/SingleFileUploader"; */
@@ -22,7 +25,11 @@ function App() {
           navItems={items}
         /> */}
       </div>
-      <MultipleFileUploader />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/uploadData" element={<UploadData />} />
+      </Routes>
     </>
   );
 }
