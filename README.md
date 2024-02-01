@@ -34,6 +34,8 @@ export default {
 login and registration : https://medium.com/@prabhashi.mm/create-a-simple-react-app-typescript-with-login-register-pages-using-create-react-app-e5c12dd6db53
 State management using Redux: https://blog.stackademic.com/manage-your-react-typescript-application-state-using-redux-toolkit-926d3b4abaa7
 notifications for user login: https://blog.stackademic.com/handle-notifications-in-your-react-application-typescript-using-redux-toolkit-and-use-a-custom-d2e1c9de9db2
+
+backend: https://github.com/Prabashi/project-mgt-app-backend/tree/auth
 # next steps
 State management using redux : https://www.youtube.com/watch?v=fxT54eRIsc4
 async calls Thunk middleware: https://www.youtube.com/watch?v=2JBx_06dD1k

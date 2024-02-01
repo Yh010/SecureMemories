@@ -28,19 +28,15 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
+    // This is only a basic validation of inputs. Improve this as needed.
     if (email && password) {
-      try {
-        await dispatch(
-          login({
-            email,
-            password,
-          })
-        ).unwrap();
-      } catch (e) {
-        console.error(e);
-      }
+      dispatch(
+        login({
+          email,
+          password,
+        })
+      );
     } else {
-      // Show an error message.
       dispatch(
         showNotification({
           message: "Please provide email and password",
