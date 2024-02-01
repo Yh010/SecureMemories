@@ -9,6 +9,7 @@ import UploadData from "./pages/UploadData";
 import Register from "./pages/Register";
 import DefaultLayout from "./layouts/DefaultLayout";
 import ProtectedLayout from "./layouts/ProtectedLayout";
+import NotificationBar from "./components/notifications/NotificationBar";
 /* import Navbar from "./components/Navbar"; */
 /* import imagePath from "./assets/react.svg"; */
 /* import SingleFileUploader from "./components/SingleFileUploader"; */
@@ -28,6 +29,7 @@ function App() {
           navItems={items}
         /> */}
       </div>
+      <NotificationBar />
       <Routes>
         <Route element={<DefaultLayout />}>
           <Route path="/login" element={<Login />} />

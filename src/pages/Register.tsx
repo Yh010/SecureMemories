@@ -13,6 +13,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../hooks/redux-hooks";
 import { register } from "../slices/authSlice";
+import {
+  showNotification,
+  NotificationType,
+} from "../slices/notificationSlice";
 
 const Register = () => {
   const dispatch = useAppDispatch();
@@ -37,6 +41,12 @@ const Register = () => {
       }
     } else {
       // Show an error message.
+      dispatch(
+        showNotification({
+          message: "Please fill out all the required fields",
+          type: NotificationType.Error,
+        })
+      );
     }
   };
 
