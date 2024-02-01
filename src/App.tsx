@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import UploadData from "./pages/UploadData";
+import Register from "./pages/Register";
 /* import Navbar from "./components/Navbar"; */
 /* import imagePath from "./assets/react.svg"; */
 /* import SingleFileUploader from "./components/SingleFileUploader"; */
@@ -29,6 +30,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/uploadData" element={<UploadData />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </>
   );
