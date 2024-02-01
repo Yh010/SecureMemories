@@ -36,6 +36,10 @@ State management using Redux: https://blog.stackademic.com/manage-your-react-typ
 notifications for user login: https://blog.stackademic.com/handle-notifications-in-your-react-application-typescript-using-redux-toolkit-and-use-a-custom-d2e1c9de9db2
 
 backend: https://github.com/Prabashi/project-mgt-app-backend/tree/auth
+
+user authentication: https://blog.stackademic.com/create-a-backend-application-using-express-typescript-and-handle-authentication-1f67be81da60
 # next steps
 State management using redux : https://www.youtube.com/watch?v=fxT54eRIsc4
 async calls Thunk middleware: https://www.youtube.com/watch?v=2JBx_06dD1k
+user authentication
+
