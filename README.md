@@ -43,3 +43,8 @@ State management using redux : https://www.youtube.com/watch?v=fxT54eRIsc4
 async calls Thunk middleware: https://www.youtube.com/watch?v=2JBx_06dD1k
 user authentication
 
+steps:
+1) https://medium.com/@prabhashi.mm/create-a-simple-react-app-typescript-with-login-register-pages-using-create-react-app-e5c12dd6db53
+2) https://blog.stackademic.com/manage-your-react-typescript-application-state-using-redux-toolkit-926d3b4abaa7
+3) https://blog.stackademic.com/handle-notifications-in-your-react-application-typescript-using-redux-toolkit-and-use-a-custom-d2e1c9de9db2
+4) https://blog.stackademic.com/create-a-backend-application-using-express-typescript-and-handle-authentication-1f67be81da60
