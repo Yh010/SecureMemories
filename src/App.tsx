@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import UploadData from "./pages/UploadData";
 import Register from "./pages/Register";
+import DefaultLayout from "./layouts/DefaultLayout";
+import ProtectedLayout from "./layouts/ProtectedLayout";
 /* import Navbar from "./components/Navbar"; */
 /* import imagePath from "./assets/react.svg"; */
 /* import SingleFileUploader from "./components/SingleFileUploader"; */
@@ -27,10 +29,17 @@ function App() {
         /> */}
       </div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/uploadData" element={<UploadData />} />
-        <Route path="/register" element={<Register />} />
+        <Route element={<DefaultLayout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
+
+        <Route element={<ProtectedLayout />}>
+          <Route path="/" element={<Home />} />
+
+          {/* check if the uplaod data component is added correctly below */}
+          <Route path="/uploadData" element={<UploadData />} />
+        </Route>
       </Routes>
     </>
   );
