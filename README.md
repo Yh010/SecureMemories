@@ -35,3 +35,4 @@ login and registration : https://medium.com/@prabhashi.mm/create-a-simple-react-
 State management using Redux: https://blog.stackademic.com/manage-your-react-typescript-application-state-using-redux-toolkit-926d3b4abaa7
 # next steps
 State management using redux : https://www.youtube.com/watch?v=fxT54eRIsc4
+async calls Thunk middleware: https://www.youtube.com/watch?v=2JBx_06dD1k
