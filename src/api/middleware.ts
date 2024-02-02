@@ -18,7 +18,7 @@ export const axiosMiddleware: Middleware =
         })
       );
     } else if (action.type.endsWith("/fulfilled")) {
-      const successMessage = action.payload?.message || "Sucess!";
+      const successMessage = action.payload?.message || "Success!";
 
       dispatch(
         showNotification({
