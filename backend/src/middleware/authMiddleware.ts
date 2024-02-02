@@ -34,4 +34,19 @@ const authenticate = asyncHandler(
   }
 );
 
-export { authenticate };
+const authorize = (allowedRoles: string[]) => {
+  return (req: Request, res: Response, next: NextFunction) => {
+    const userRoles = req.user?.roles;
+
+    if (
+      !userRoles ||
+      !userRoles.some((role: string) => allowedRoles.includes(role))
+    ) {
+      return res.status(403).json({ message: "Access denied" });
+    }
+
+    next();
+  };
+};
+
+export { authenticate,authorize };
