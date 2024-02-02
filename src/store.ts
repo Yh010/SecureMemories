@@ -7,10 +7,10 @@ import { axiosMiddleware } from "./api/middleware";
 const store = configureStore({
   reducer: {
     auth: authReducer,
-        user: userReducer,
+    users: userReducer,
     notification: notificationReducer,
-    },
-    middleware: (getDefaultMiddleware) =>
+  },
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(axiosMiddleware),
 });
 
