@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+//let MONGODB_URI = "mongodb+srv://username:dbpassword@cluster0.zqee7es.mongodb.net/?retryWrites=true&w=majority"
 
 const connectUserDB = async () => {
   try {
