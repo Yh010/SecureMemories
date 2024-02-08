@@ -35,6 +35,8 @@ login and registration : https://medium.com/@prabhashi.mm/create-a-simple-react-
 State management using Redux: https://blog.stackademic.com/manage-your-react-typescript-application-state-using-redux-toolkit-926d3b4abaa7
 notifications for user login: https://blog.stackademic.com/handle-notifications-in-your-react-application-typescript-using-redux-toolkit-and-use-a-custom-d2e1c9de9db2
 
+Image uplaod to Cloudinary:https://www.youtube.com/watch?v=GML8Mw449O4
+
 backend: https://github.com/Prabashi/project-mgt-app-backend/tree/auth
 
 user authentication: https://blog.stackademic.com/create-a-backend-application-using-express-typescript-and-handle-authentication-1f67be81da60
