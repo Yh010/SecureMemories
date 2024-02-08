@@ -9,7 +9,9 @@ interface TokenPayload {
 
 const generateToken = (res: Response, payload: TokenPayload) => {
   const jwtSecret = process.env.JWT_SECRET || "";
-  const token = jwt.sign(payload, jwtSecret, {
+  const plainObjectPayload: Record<string, any> = { ...payload };
+
+  const token = jwt.sign(plainObjectPayload, jwtSecret, {
     expiresIn: "1h",
   });
 
