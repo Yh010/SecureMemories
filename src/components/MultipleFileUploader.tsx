@@ -21,13 +21,18 @@ const MultipleFileUploader = () => {
 
       [...files].forEach((file) => {
         formData.append("files", file);
+        formData.append("upload_preset", "ml_default");
+        formData.append("cloud_name", "domndeozo");
       });
 
       try {
-        const result = await fetch("https://httpbin.org/post", {
-          method: "POST",
-          body: formData,
-        });
+        const result = await fetch(
+          "https://api.cloudinary.com/v1_1/ml_default/image/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         const data = await result.json();
 
